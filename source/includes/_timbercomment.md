@@ -1,5 +1,5 @@
 
-# TimberComment
+# Timber\Comment
 The TimberComment class is used to view the output of comments. 99% of the time this will be in the context of the comments on a post. However you can also fetch a comment directly using its comment ID.
 
 ###### PHP
@@ -23,8 +23,9 @@ Timber::render('index.twig', $context);
 Name | Type | Description
 ---- | ---- | -----------
 [approved](#approved) | boolean | 
-[author](#author) | \TimberUser | 
+[author](#author) | \Timber\User | 
 [avatar](#avatar) | bool/mixed/string | 
+[children](#children) | array | Comments
 [content](#content) | string | 
 [date](#date) | string | 
 [is_child](#is_child) | bool | 
@@ -49,6 +50,17 @@ $cid | int |
 
 
 
+## add_child
+`add_child( \Timber\Comment $child_comment )`
+
+**returns:** `void` 
+
+Name | Type | Description
+---- | ---- | -----------
+$child_comment | \Timber\Comment | 
+
+
+
 ## approved
 `approved( )`
 
@@ -66,7 +78,7 @@ $cid | int |
 ## author
 `author( )`
 
-**returns:** `\TimberUser` 
+**returns:** `\Timber\User` 
 
 ###### Twig
 ```twig
@@ -107,6 +119,13 @@ $default | string |
 ```html
 	<img src="http://gravatar.com/i/sfsfsdfasdfsfa.jpg" alt="Image of Katherine Rich" />
 ```
+
+## children
+`children( )`
+
+**returns:** `array` Comments
+
+
 
 ## content
 `content( )`
@@ -199,7 +218,7 @@ $time_format | string |
 ```
 
 
-### Class: TimberComment
+### Class: \Timber\Comment
 
 > The TimberComment class is used to view the output of comments. 99% of the time this will be in the context of the comments on a post. However you can also fetch a comment directly using its comment ID.
 
@@ -224,7 +243,7 @@ Timber::render('index.twig', $context);
 
 
 
-*This class extends \TimberCore*
+*This class extends \Timber\Core*
 
-*This class implements \TimberCoreInterface*
+*This class implements \Timber\CoreInterface*
 

@@ -1,5 +1,5 @@
 
-# TimberTerm
+# Timber\Term
 Terms: WordPress has got 'em, you want 'em. Categories. Tags. Custom Taxonomies. You don't care, you're a fiend. Well let's get this under control
 
 ###### PHP
@@ -44,7 +44,7 @@ Name | Type | Description
 name | string | the human-friendly name of the term (ex: French Cuisine)
 [path](#path) | string | 
 [posts](#posts) | array/bool/null | 
-taxonomy | strng | the WordPress taxonomy slug (ex: `post_tag` or `actors`)
+taxonomy | string | the WordPress taxonomy slug (ex: `post_tag` or `actors`)
 [title](#title) | string | 
 
 ## __construct
@@ -90,25 +90,12 @@ $tax | string |
 ## from
 `from( mixed $tid, mixed $taxonomy )`
 
-**returns:** `\static` 
+**returns:** `\Timber\static` 
 
 Name | Type | Description
 ---- | ---- | -----------
 $tid | mixed | 
 $taxonomy | mixed | 
-
-
-
-## <strike>get_page</strike>
-**DEPRECATED** 0.20.0 this was a dumb idea
-
-`get_page( int $i )`
-
-**returns:** `string` 
-
-Name | Type | Description
----- | ---- | -----------
-$i | int | 
 
 
 
@@ -177,17 +164,8 @@ $value | mixed |
 
 
 
-## <strike>url</strike>
-**DEPRECATED** 0.21.9 use TimberTerm::link() instead
 
-`url( )`
-
-**returns:** `string` 
-
-
-
-
-### Class: TimberTerm
+### Class: \Timber\Term
 
 > Terms: WordPress has got 'em, you want 'em. Categories. Tags. Custom Taxonomies. You don't care, you're a fiend. Well let's get this under control
 
@@ -226,7 +204,7 @@ Timber::render('index.twig', $context);
 
 
 
-*This class extends \TimberCore*
+*This class extends \Timber\Core*
 
-*This class implements \TimberCoreInterface*
+*This class implements \Timber\CoreInterface*
 

@@ -1,5 +1,5 @@
 
-# TimberUser
+# Timber\User
 This is used in Timber to represent users retrived from WordPress. You can call `$my_user = new TimberUser(123);` directly, or access it through the `{{ post.author }}` method.
 
 ###### PHP
@@ -22,6 +22,7 @@ Timber::render('single.twig', $context);
 
 Name | Type | Description
 ---- | ---- | -----------
+avatar | string|Image | The URL of the author's avatar
 description | string | The description from WordPress
 first_name | string | The first name of the user
 id | int | The ID from WordPress
@@ -63,15 +64,6 @@ $uid | bool/int/bool |
 
 
 
-## <strike>get_link</strike>
-**DEPRECATED** 0.21.9
-
-`get_link( )`
-
-**returns:** `string` The link to a user's profile page
-
-
-
 ## get_meta_field
 `get_meta_field( string $field_name )`
 
@@ -80,24 +72,6 @@ $uid | bool/int/bool |
 Name | Type | Description
 ---- | ---- | -----------
 $field_name | string | 
-
-
-
-## <strike>get_path</strike>
-**DEPRECATED** 0.21.8
-
-`get_path( )`
-
-**returns:** `string` ex: /author/lincoln
-
-
-
-## <strike>get_permalink</strike>
-**DEPRECATED** 0.21.8
-
-`get_permalink( )`
-
-**returns:** `string` 
 
 
 
@@ -133,15 +107,6 @@ $field_name | string |
 
 
 
-## <strike>permalink</strike>
-**DEPRECATED** 0.21.8
-
-`permalink( )`
-
-**returns:** `string` 
-
-
-
 ## slug
 `slug( )`
 
@@ -150,7 +115,7 @@ $field_name | string |
 
 
 
-### Class: TimberUser
+### Class: \Timber\User
 
 > This is used in Timber to represent users retrived from WordPress. You can call `$my_user = new TimberUser(123);` directly, or access it through the `{{ post.author }}` method.
 
@@ -175,7 +140,7 @@ Timber::render('single.twig', $context);
 
 
 
-*This class extends \TimberCore*
+*This class extends \Timber\Core*
 
-*This class implements \TimberCoreInterface*
+*This class implements \Timber\CoreInterface*
 

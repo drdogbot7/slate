@@ -1,5 +1,5 @@
 
-# TimberSite
+# Timber\Site
 TimberSite gives you access to information you need about your site. In Multisite setups, you can get info on other sites in your network.
 
 ###### PHP
@@ -34,7 +34,6 @@ pingback_url | string | for people who like trackback spam
 rdf | string | 
 theme | [TimberTheme](#TimberTheme) | 
 title | string | 
-[url](#url) | string | 
 
 ## __construct
 `__construct( mixed/string/int $site_name_or_id=null )`
@@ -88,7 +87,9 @@ Returns the link to the site's home.
 	</a>
 ```
 
-## url
+## <strike>url</strike>
+**DEPRECATED** 1.0.4
+
 `url( )`
 
 **returns:** `string` 
@@ -96,7 +97,7 @@ Returns the link to the site's home.
 
 
 
-### Class: TimberSite
+### Class: \Timber\Site
 
 > TimberSite gives you access to information you need about your site. In Multisite setups, you can get info on other sites in your network.
 
@@ -120,7 +121,7 @@ My site is called Jared's blog, another site on my network is Upstatement.com
 
 
 
-*This class extends \TimberCore*
+*This class extends \Timber\Core*
 
-*This class implements \TimberCoreInterface*
+*This class implements \Timber\CoreInterface*
 
