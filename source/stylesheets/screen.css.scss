@@ -47,8 +47,7 @@ html, body {
   z-index: 100;
   position: fixed;
   width: 100%;
-  //box-shadow: 0 3px 8px #aaacac;
-  filter: drop-shadow(0px 0px 5px rgba(0,0,0,.5));
+  box-shadow: 0 3px 8px #aaacac;
   height: $topnav-height;
   top: 0;
 }
@@ -794,6 +793,7 @@ nav {
     // border-radius: 3px;
     color: #1f8a43;
     @extend %break-words;
+    white-space: pre-wrap;
     @extend %code-font;
     text-transform: none;
     font-weight: normal;
