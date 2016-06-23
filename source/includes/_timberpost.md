@@ -1,5 +1,5 @@
 
-# TimberPost
+# Timber\Post
 This is the object you use to access or extend WordPress posts. Think of it as Timber's (more accessible) version of WP_Post. This is used throughout Timber to represent posts retrieved from WordPress making them available to Twig templates. See the PHP and Twig examples for an example of what it's like to work with this object in your code.
 
 ###### PHP
@@ -8,7 +8,7 @@ This is the object you use to access or extend WordPress posts. Think of it as T
 <?php
 // single.php, see connected twig example
 $context = Timber::get_context();
-$context['post'] = new TimberPost(); // It's a new TimberPost object, but an existing post from WordPress.
+$context['post'] = new Timber\Post(); // It's a new Timber\Post object, but an existing post from WordPress.
 Timber::render('single.twig', $context);
 ?>
 ```
@@ -34,9 +34,9 @@ Timber::render('single.twig', $context);
 
 Name | Type | Description
 ---- | ---- | -----------
-[author](#author) | \TimberUser/bool | A TimberUser object if found, false if not
+[author](#author) | \Timber\User/null | A User object if found, false if not
 [categories](#categories) | array | of TimberTerms
-[category](#category) | \TimberTerm/null | 
+[category](#category) | \Timber\TimberTerm/null | 
 [children](#children) | array | 
 class | string | $class stores the CSS classes for the post (ex: "post post-type-book post-123")
 [comments](#comments) | bool/array | 
@@ -47,7 +47,7 @@ class | string | $class stores the CSS classes for the post (ex: "post post-type
 id | string | $id the numeric WordPress id of a post
 [link](#link) | string | ex: http://example.org/2015/07/my-awesome-post
 [next](#next) | mixed | 
-[parent](#parent) | bool/[\TimberPost](#class-timberpost) | 
+[parent](#parent) | bool/\Timber\Timber\Post | 
 [path](#path) | string | 
 post_status | string | 		$post_status 	the status of a post ("draft", "publish", etc.)
 post_type | string | 	$post_type 		the name of the post type, this is the machine name (so "my_custom_post_type" as opposed to "My Custom Post Type")
@@ -55,7 +55,7 @@ post_type | string | 	$post_type 		the name of the post type, this is the machin
 slug | string | 	$slug 		the URL-safe slug, this corresponds to the poorly-named "post_name" in the WP database, ex: "hello-world"
 [tags](#tags) | array | 
 [terms](#terms) | array | 
-[thumbnail](#thumbnail) | \TimberImage/null | of your thumbnail
+[thumbnail](#thumbnail) | \Timber\TimberImage/null | of your thumbnail
 [time](#time) | string | 
 [title](#title) | string | 
 
@@ -73,8 +73,8 @@ $pid | mixed |
 ###### PHP
 ```php
 <?php
-	$post = new TimberPost();
-	$other_post = new TimberPost($random_post_id);
+	$post = new Timber\Post();
+	$other_post = new Timber\Post($random_post_id);
 ```
 
 ## __toString
@@ -89,7 +89,7 @@ Outputs the title of the post if you do something like `<h1>{{post}}</h1>`
 ## author
 `author( )`
 
-**returns:** `\TimberUser/bool` A TimberUser object if found, false if not
+**returns:** `\Timber\User/null` A User object if found, false if not
 
 Return the author of a post
 
@@ -113,7 +113,7 @@ Get the categoires on a particular post
 ## category
 `category( )`
 
-**returns:** `\TimberTerm/null` 
+**returns:** `\Timber\TimberTerm/null` 
 
 Returns a category attached to a post
 
@@ -124,12 +124,12 @@ Returns a category attached to a post
 
 **returns:** `array` 
 
-Returns an array of children on the post as TimberPosts (or other claass as you define).
+Returns an array of children on the post as Timber\Posts (or other claass as you define).
 
 Name | Type | Description
 ---- | ---- | -----------
 $post_type | string | _optional_ use to find children of a particular post type (attachment vs. page for example). You might want to restrict to certain types of children in case other stuff gets all mucked in there. You can use 'parent' to use the parent's post type
-$childPostClass | bool/string/bool | _optional_ a custom post class (ex: 'MyTimberPost') to return the objects as. By default (false) it will use TimberPost::$post_class value.
+$childPostClass | bool/string/bool | _optional_ a custom post class (ex: 'MyTimber\Post') to return the objects as. By default (false) it will use Timber\Post::$post_class value.
 
 ###### Twig
 ```twig
@@ -141,12 +141,25 @@ $childPostClass | bool/string/bool | _optional_ a custom post class (ex: 'MyTimb
 	{% endif %}
 ```
 
+## comment_form
+`comment_form( array $args=array() )`
+
+**returns:** `string` of HTML for the form
+
+Gets the comment form for use on a single article page
+
+Name | Type | Description
+---- | ---- | -----------
+$args | array | 
+
+
+
 ## comments
-`comments( int $count, string $order="wp", string $type="comment", string $status="approve", string $CommentClass="TimberComment" )`
+`comments( int $count, string $order="wp", string $type="comment", string $status="approve", string $CommentClass="Timber\Comment" )`
 
 **returns:** `bool/array` 
 
-Gets the comments on a TimberPost and returns them as an array of [TimberComments](#TimberComment) (or whatever comment class you set).
+Gets the comments on a Timber\Post and returns them as an array of [TimberComments](#TimberComment) (or whatever comment class you set).
 
 Name | Type | Description
 ---- | ---- | -----------
@@ -169,7 +182,7 @@ $CommentClass | string | What class to use when returning Comment objects. As yo
 ```
 
 ## content
-`content( int $page )`
+`content( int $page, mixed $len=-1 )`
 
 **returns:** `string` 
 
@@ -178,6 +191,7 @@ Gets the actual content of a WP Post, as opposed to post_content this will run t
 Name | Type | Description
 ---- | ---- | -----------
 $page | int | 
+$len | mixed | 
 
 ###### Twig
 ```twig
@@ -186,6 +200,20 @@ $page | int |
 	    <div class="content">{{ post.content }}</div>
 	</div>
 ```
+
+## convert
+`convert( array $data, string $class )`
+
+**returns:** `void` 
+
+Finds any WP_Post objects and converts them to Timber\Posts
+
+Name | Type | Description
+---- | ---- | -----------
+$data | array | 
+$class | string | 
+
+
 
 ## date
 `date( string $date_format="" )`
@@ -214,7 +242,9 @@ $date_format | string |
 ## edit_link
 `edit_link( )`
 
-**returns:** `bool/string` 
+**returns:** `bool/string` the edit URL of a post in the WordPress admin
+
+Returns the edit URL of a post if the user has access to it
 
 
 
@@ -233,7 +263,7 @@ $date_format | string |
 
 
 ## get_content
-`get_content( int $len, int $page )`
+`get_content( mixed/int $len=-1, int $page )`
 
 **returns:** `string` 
 
@@ -241,16 +271,16 @@ Displays the content of the post with filters, shortcodes and wpautop applied
 
 Name | Type | Description
 ---- | ---- | -----------
-$len | int | 
+$len | mixed/int | 
 $page | int | 
 
 ###### Twig
 ```twig
-	<div class="article-text">{{post.get_content}}</div>
+		<div class="article-text">{{post.get_content}}</div>
 ```
 ###### HTML
 ```html
-	<div class="article-text"><p>Blah blah blah</p><p>More blah blah blah.</p></div>
+		<div class="article-text"><p>Blah blah blah</p><p>More blah blah blah.</p></div>
 ```
 
 ## get_field
@@ -267,7 +297,7 @@ $field_name | string |
 ## get_image
 `get_image( string $field )`
 
-**returns:** `\TimberImage` 
+**returns:** `\Timber\TimberImage` 
 
 Name | Type | Description
 ---- | ---- | -----------
@@ -289,21 +319,14 @@ $field | string |
 
 
 
-## get_pagination
-`get_pagination( )`
+## <strike>get_post_type</strike>
+**DEPRECATED** since 1.0.4
 
-**returns:** `array` 
-
-Get a data array of pagination so you can navigate to the previous/next for a paginated post
-
-
-
-## get_post_type
 `get_post_type( )`
 
-**returns:** `mixed` 
+**returns:** `\Timber\PostType` 
 
-Here is my summary
+Returns the post_type object with labels and other info
 
 ###### Twig
 ```twig
@@ -315,7 +338,7 @@ Here is my summary
 ```
 
 ## get_preview
-`get_preview( mixed/int $len=50, bool $force=false, string $readmore="Read More", bool $strip=true, string $end="&hellip;" )`
+`get_preview( mixed/int $len=50, bool $force=false, string $readmore="Read More", bool/bool/string $strip=true, string $end="&hellip;" )`
 
 **returns:** `string` of the post preview
 
@@ -326,13 +349,24 @@ Name | Type | Description
 $len | mixed/int | The number of words that WP should use to make the tease. (Isn't this better than [this mess](http://wordpress.org/support/topic/changing-the-default-length-of-the_excerpt-1?replies=14)?). If you've set a post_excerpt on a post, we'll use that for the preview text; otherwise the first X words of the post_content
 $force | bool | What happens if your custom post excerpt is longer then the length requested? By default (`$force = false`) it will use the full `post_excerpt`. However, you can set this to true to *force* your excerpt to be of the desired length
 $readmore | string | The text you want to use on the 'readmore' link
-$strip | bool | Strip tags? yes or no. tell me!
+$strip | bool/bool/string | true for default, false for none, string for list of custom attributes
 $end | string | The text to end the preview with (defaults to ...)
 
 ###### Twig
 ```twig
 	<p>{{post.get_preview(50)}}</p>
 ```
+
+## has_field
+`has_field( string $field_name )`
+
+**returns:** `boolean` 
+
+Name | Type | Description
+---- | ---- | -----------
+$field_name | string | 
+
+
 
 ## has_term
 `has_term( string/int $term_name_or_id, string $taxonomy="all" )`
@@ -383,7 +417,7 @@ $field_name | mixed/string |
 ## modified_author
 `modified_author( )`
 
-**returns:** `\TimberUser/bool` A TimberUser object if found, false if not
+**returns:** `\Timber\User/null` A User object if found, false if not
 
 Get the author (WordPress user) who last modified the post
 
@@ -426,13 +460,13 @@ $time_format | string |
 
 
 ## next
-`next( bool $in_same_cat=false )`
+`next( bool $in_same_term=false )`
 
 **returns:** `mixed` 
 
 Name | Type | Description
 ---- | ---- | -----------
-$in_same_cat | bool | 
+$in_same_term | bool | 
 
 
 
@@ -448,14 +482,16 @@ $in_same_cat | bool |
 
 **returns:** `array` 
 
+Get a data array of pagination so you can navigate to the previous/next for a paginated post
+
 
 
 ## parent
 `parent( )`
 
-**returns:** `bool/[\TimberPost](#class-timberpost)` 
+**returns:** `bool/\Timber\Timber\Post` 
 
-Gets the parent (if one exists) from a post as a TimberPost object (or whatever is set in TimberPost::$PostClass)
+Gets the parent (if one exists) from a post as a Timber\Post object (or whatever is set in Timber\Post::$PostClass)
 
 ###### Twig
 ```twig
@@ -484,7 +520,7 @@ Gets the relative path of a WP Post, so while link() will return http://example.
 
 
 ## prev
-`prev( bool $in_same_cat=false )`
+`prev( bool $in_same_term=false )`
 
 **returns:** `mixed` 
 
@@ -492,7 +528,7 @@ Get the previous post in a set
 
 Name | Type | Description
 ---- | ---- | -----------
-$in_same_cat | bool | 
+$in_same_term | bool | 
 
 ###### Twig
 ```twig
@@ -500,6 +536,13 @@ $in_same_cat | bool |
 	<h3>{{post.prev.title}}</h3>
 	<p>{{post.prev.get_preview(25)}}</p>
 ```
+
+## preview
+`preview( )`
+
+**returns:** `\Timber\PostPreview` 
+
+
 
 ## tags
 `tags( )`
@@ -511,7 +554,7 @@ Gets the tags on a post, uses WP's post_tag taxonomy
 
 
 ## terms
-`terms( string/string/array $tax="", bool $merge=true )`
+`terms( string/string/array $tax="", bool $merge=true, string $TermClass="" )`
 
 **returns:** `array` 
 
@@ -521,13 +564,14 @@ Name | Type | Description
 ---- | ---- | -----------
 $tax | string/string/array | What taxonom(y|ies) to pull from. Defaults to all registered taxonomies for the post type. You can use custom ones, or built-in WordPress taxonomies (category, tag). Timber plays nice and figures out that tag/tags/post_tag are all the same (and categories/category), for custom taxonomies you're on your own.
 $merge | bool | Should the resulting array be one big one (true)? Or should it be an array of sub-arrays for each taxonomy (false)?
+$TermClass | string | 
 
 
 
 ## thumbnail
 `thumbnail( )`
 
-**returns:** `\TimberImage/null` of your thumbnail
+**returns:** `\Timber\TimberImage/null` of your thumbnail
 
 get the featured image as a TimberImage
 
@@ -572,6 +616,22 @@ Returns the processed title to be used in templates. This returns the title of t
 	<h1>{{ post.title }}</h1>
 ```
 
+## type
+`type( )`
+
+**returns:** `\Timber\PostType` 
+
+Returns the post_type object with labels and other info
+
+###### Twig
+```twig
+	This post is from <span>{{ post.type.labels.name }}</span>
+```
+###### HTML
+```html
+	This post is from <span>Recipes</span>
+```
+
 ## update
 `update( string $field, mixed $value )`
 
@@ -583,6 +643,17 @@ Name | Type | Description
 ---- | ---- | -----------
 $field | string | 
 $value | mixed | 
+
+
+
+## get_post_preview_id
+`get_post_preview_id( mixed $query )`
+
+**returns:** `mixed` 
+
+Name | Type | Description
+---- | ---- | -----------
+$query | mixed | 
 
 
 
@@ -598,44 +669,9 @@ $i | int |
 
 
 
-### Class: TimberPost
-
-> This is the object you use to access or extend WordPress posts. Think of it as Timber's (more accessible) version of WP_Post. This is used throughout Timber to represent posts retrieved from WordPress making them available to Twig templates. See the PHP and Twig examples for an example of what it's like to work with this object in your code.
-
-###### Example
-###### PHP
-```php
-<?php
-<?php
-// single.php, see connected twig example
-$context = Timber::get_context();
-$context['post'] = new TimberPost(); // It's a new TimberPost object, but an existing post from WordPress.
-Timber::render('single.twig', $context);
-?>
-```
-###### Twig
-```twig
-{# single.twig #}
-<article>
-    <h1 class="headline">{{post.title}}</h1>
-    <div class="body">
-        {{post.content}}
-    </div>
-</article>
-```
-###### HTML
-```html
-<article>
-    <h1 class="headline">The Empire Strikes Back</h1>
-    <div class="body">
-        It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.
-    </div>
-</article>
-```
 
 
+*This class extends \Timber\Core*
 
-*This class extends \TimberCore*
-
-*This class implements \TimberCoreInterface*
+*This class implements \Timber\CoreInterface*
 

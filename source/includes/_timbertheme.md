@@ -1,5 +1,5 @@
 
-# TimberTheme
+# Timber\Theme
 Need to display info about your theme? Well you've come to the right place. By default info on the current theme comes for free with what's fetched by `Timber::get_context()` in which case you can access it your theme like so:
 
 ###### PHP
@@ -91,29 +91,7 @@ $default | bool |
 
 
 
-### Class: TimberTheme
-
-> Need to display info about your theme? Well you've come to the right place. By default info on the current theme comes for free with what's fetched by `Timber::get_context()` in which case you can access it your theme like so:
-
-###### Example
-###### PHP
-```php
-<?php
-<?php
-$context = Timber::get_context();
-Timber::render('index.twig', $context);
-?>
-```
-###### Twig
-```twig
-<script src="{{theme.link}}/static/js/all.js"></script>
-```
-###### HTML
-```html
-<script src="http://example.org/wp-content/themes/my-theme/static/js/all.js"></script>
-```
 
 
-
-*This class extends \TimberCore*
+*This class extends \Timber\Core*
 
