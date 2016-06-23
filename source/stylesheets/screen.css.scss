@@ -23,6 +23,17 @@ under the License.
 // GENERAL STUFF
 ////////////////////////////////////////////////////////////////////////////////
 
+
+[data-unique="object-reference"], [data-unique="getting-started"], [data-unique="guides"] {
+ font-size:1.2em;
+ color: #72b86f;
+ font-weight: 600;
+
+ a {
+  color: #72b86f;
+ }
+}
+
 html, body {
   color: $main-text;
   padding: 0;
@@ -598,6 +609,47 @@ nav {
     clear: both;
   }
 
+
+  #getting-started, #guides, #object-reference {
+    //padding-top: ($topnav-height + 50px);
+    margin-bottom: 0;
+    color: #3d8442;
+    font-size:1em;
+    text-transform: uppercase;
+    letter-spacing:.5px;
+    font-weight: 800;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    line-height: 2em;
+    opacity:.75;
+  }
+
+  #guides, #object-reference {
+    margin-top: 10em;
+  }
+
+
+
+  #getting-started:hover {
+      letter-spacing: 1px;
+      opacity:1;
+    }
+
+  #guides:hover {
+    letter-spacing:1px;
+    opacity:1;
+  } 
+
+  #object-reference:hover {
+    letter-spacing:1px;
+    opacity:1;
+
+  }
+
+  
+
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
     padding: 0 $main-padding;
     box-sizing: border-box;
@@ -614,6 +666,7 @@ nav {
   &>h1, &>h2, &>div {
     clear:both;
   }
+
 
 
   a {
@@ -634,7 +687,6 @@ nav {
     //padding-top: 0.5em;
     //padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
     color: #5ebb4c;
     font-weight: 400;
     line-height: 1.2em;
