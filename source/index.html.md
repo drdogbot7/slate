@@ -6,11 +6,13 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - getting-started-header
   - video-tutorials
   - getting-started-setup
   - getting-started-themeing
   - tools-for-twig
 
+  - guides-header
   - acf-cookbook
   - custom-page-templates
   - debugging
@@ -24,6 +26,7 @@ includes:
   - woocommerce
   - wp-integration
 
+  - object-reference-header
   - timber
   - timberarchives
   - timbercomment
