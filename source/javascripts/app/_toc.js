@@ -11,6 +11,14 @@
   };
 
   var makeToc = function() {
+    var width = $( window ).width();
+    var scrollToHeight = 95;
+    if (width < 930) {
+      scrollToHeight = 25;
+    }
+    console.log(scrollToHeight);
+    console.log(width);
+
     global.toc = $("#toc").tocify({
       selectors: 'h1, h2',
       extendPage: false,
@@ -20,7 +28,7 @@
       hideEffectSpeed: 180,
       ignoreSelector: '.toc-ignore',
       highlightOffset: 60,
-      scrollTo: 95,
+      scrollTo: scrollToHeight,
       scrollHistory: true,
       hashGenerator: function (text, element) {
         return element.prop('id');
@@ -45,7 +53,7 @@
     }, 50);
   }
 
-  $(function() {
+  $(function() {    
     makeToc();
     animate();
     setupLanguages($('body').data('languages'));
