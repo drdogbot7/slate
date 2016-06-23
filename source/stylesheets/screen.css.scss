@@ -648,6 +648,8 @@ nav {
 
   }
 
+ 
+
   
 
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
@@ -687,6 +689,7 @@ nav {
     //padding-top: 0.5em;
     //padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
+    margin-top: 1em;
     color: #5ebb4c;
     font-weight: 400;
     line-height: 1.2em;
@@ -741,6 +744,8 @@ nav {
 
 
 
+
+
   h3, h4, h5, h6 {
     @extend %header-font;
     margin-top: 2em;
@@ -752,7 +757,7 @@ nav {
       font-size: 1.125em;
       font-weight: 700;
       margin-top: 1.5em;
-      margin-bottom: .25em;
+      margin-bottom: 1.25em;
   }
 
   h4, h6 {
