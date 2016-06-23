@@ -97,28 +97,6 @@ Returns the link to the site's home.
 
 
 
-### Class: \Timber\Site
-
-> TimberSite gives you access to information you need about your site. In Multisite setups, you can get info on other sites in your network.
-
-###### Example
-###### PHP
-```php
-<?php
-$context = Timber::get_context();
-$other_site_id = 2;
-$context['other_site'] = new TimberSite($other_site_id);
-Timber::render('index.twig', $context);
-```
-###### Twig
-```twig
-My site is called {{site.name}}, another site on my network is {{other_site.name}}
-```
-###### HTML
-```html
-My site is called Jared's blog, another site on my network is Upstatement.com
-```
-
 
 
 *This class extends \Timber\Core*
