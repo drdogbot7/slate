@@ -1,5 +1,3 @@
-###### Getting Started
-
 # Getting Started: Setup
 
 ## Installation
