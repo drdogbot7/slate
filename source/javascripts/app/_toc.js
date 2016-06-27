@@ -26,9 +26,10 @@
       theme: 'none',
       smoothScroll: false,
       showEffectSpeed: 0,
+      showAndHideOnScroll: true,
       hideEffectSpeed: 180,
       ignoreSelector: '.toc-ignore',
-      highlightOffset: 60,
+      highlightOffset: scrollToHeight + 1,
       scrollTo: scrollToHeight,
       scrollHistory: true,
       hashGenerator: function (text, element) {
