@@ -16,8 +16,6 @@
     if (width < 930) {
       scrollToHeight = 25;
     }
-    console.log(scrollToHeight);
-    console.log(width);
 
     global.toc = $("#toc").tocify({
       selectors: 'h1, h2',
