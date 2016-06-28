@@ -218,6 +218,29 @@ $time_format | string |
 ```
 
 
+### Class: \Timber\Comment
+
+> The TimberComment class is used to view the output of comments. 99% of the time this will be in the context of the comments on a post. However you can also fetch a comment directly using its comment ID.
+
+###### Example
+###### PHP
+```php
+<?php
+$comment = new TimberComment($comment_id);
+$context['comment_of_the_day'] = $comment;
+Timber::render('index.twig', $context);
+```
+###### Twig
+```twig
+<p class="comment">{{comment_of_the_day.content}}</p>
+<p class="comment-attribution">- {{comment.author.name}}</p>
+```
+###### HTML
+```html
+<p class="comment">But, O Sarah! If the dead can come back to this earth and flit unseen around those they loved, I shall always be near you; in the garish day and in the darkest night -- amidst your happiest scenes and gloomiest hours - always, always; and if there be a soft breeze upon your cheek, it shall be my breath; or the cool air fans your throbbing temple, it shall be my spirit passing by.</p>
+<p class="comment-attribution">- Sullivan Ballou</p>
+```
+
 
 
 *This class extends \Timber\Core*

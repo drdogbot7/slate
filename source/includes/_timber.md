@@ -340,5 +340,22 @@ Tests whether we can use Timber
 
 
 
+### Class: \Timber\Timber
+
+> Timber Class. Main class called Timber for this plugin.
+
+###### Example
+###### PHP
+```php
+<?php
+ $posts = Timber::get_posts();
+ $posts = Timber::get_posts('post_type = article')
+ $posts = Timber::get_posts(array('post_type' => 'article', 'category_name' => 'sports')); // uses wp_query format.
+ $posts = Timber::get_posts(array(23,24,35,67), 'InkwellArticle');
+ $context = Timber::get_context(); // returns wp favorites!
+ $context['posts'] = $posts;
+ Timber::render('index.twig', $context);
+```
+
 
 

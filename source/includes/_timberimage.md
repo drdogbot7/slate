@@ -248,6 +248,45 @@ $iid | mixed |
 
 
 
+### Class: \Timber\Image
+
+> If TimberPost is the class you're going to spend the most time, TimberImage is the class you're going to have the most fun with.
+
+###### Example
+###### PHP
+```php
+<?php
+$context = Timber::get_context();
+$post = new TimberPost();
+$context['post'] = $post;
+// lets say you have an alternate large 'cover image' for your post stored in a custom field which returns an image ID
+$cover_image_id = $post->cover_image;
+$context['cover_image'] = new TimberImage($cover_image_id);
+Timber::render('single.twig', $context);
+```
+###### Twig
+```twig
+<article>
+	<img src="{{cover_image.src}}" class="cover-image" />
+	<h1 class="headline">{{post.title}}</h1>
+	<div class="body">
+		{{post.content}}
+	</div>
+	<img src="{{ Image(post.custom_field_with_image_id).src }}" alt="Another way to initialize images as TimberImages, but within Twig" />
+</article>
+```
+###### HTML
+```html
+<article>
+	<img src="http://example.org/wp-content/uploads/2015/06/nevermind.jpg" class="cover-image" />
+	<h1 class="headline">Now you've done it!</h1>
+	<div class="body">
+		Whatever whatever
+	</div>
+	<img src="http://example.org/wp-content/uploads/2015/06/kurt.jpg" alt="Another way to initialize images as TimberImages, but within Twig" />
+</article>
+```
+
 
 
 *This class extends \Timber\Post*

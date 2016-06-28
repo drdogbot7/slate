@@ -115,6 +115,29 @@ $field_name | string |
 
 
 
+### Class: \Timber\User
+
+> This is used in Timber to represent users retrived from WordPress. You can call `$my_user = new TimberUser(123);` directly, or access it through the `{{ post.author }}` method.
+
+###### Example
+###### PHP
+```php
+<?php
+$context['current_user'] = new TimberUser();
+$context['post'] = new TimberPost();
+Timber::render('single.twig', $context);
+```
+###### Twig
+```twig
+<p class="current-user-info">Your name is {{ current_user.name }}</p>
+<p class="article-info">This article is called "{{ post.title }}" and it's by {{ post.author.name }}
+```
+###### HTML
+```html
+<p class="current-user-info">Your name is Jesse Eisenberg</p>
+<p class="article-info">This article is called "Consider the Lobster" and it's by David Foster Wallace
+```
+
 
 
 *This class extends \Timber\Core*

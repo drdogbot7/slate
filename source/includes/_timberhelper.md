@@ -328,5 +328,9 @@ $enable_transients | mixed |
 
 
 
+### Class: \Timber\Helper
+
+> As the name suggests these are helpers for Timber (and you!) when developing. You can find additional (mainly internally-focused helpers) in TimberURLHelper
+
 
 
