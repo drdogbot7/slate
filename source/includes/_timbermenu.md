@@ -5,7 +5,6 @@ In Timber, you can use TimberMenu() to make a standard Wordpress menu available 
 ###### PHP
 ```php
 <?php
-<?php
 # functions.php
 add_filter('timber/context', 'add_to_context');
 function add_to_context($data){

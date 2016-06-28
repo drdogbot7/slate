@@ -96,6 +96,19 @@ Returns the link to the site's home.
 
 
 
+## switch_to_blog
+`switch_to_blog( string/\Timber\integer/null $site_name_or_id )`
+
+**returns:** `array` with the ID of the old and new blogs
+
+Switches to the blog requested in the request
+
+Name | Type | Description
+---- | ---- | -----------
+$site_name_or_id | string/\Timber\integer/null | 
+
+
+
 
 
 

@@ -6,13 +6,16 @@ toc_footers:
 
 includes:
   - getting-started-header
-  - video-tutorials
   - getting-started-setup
   - getting-started-themeing
+  - video-tutorials
   - tools-for-twig
 
   - guides-header
   - acf-cookbook
+  - cheatsheet
+  - cookbook-images
+  - cookbook-text
   - custom-page-templates
   - debugging
   - extending-timber
@@ -22,6 +25,8 @@ includes:
   - routing
   - sidebars
   - template-locations
+  - tests
+  - twig-tools
   - woocommerce
   - wp-integration
 

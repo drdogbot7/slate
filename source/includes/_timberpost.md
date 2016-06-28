@@ -5,7 +5,6 @@ This is the object you use to access or extend WordPress posts. Think of it as T
 ###### PHP
 ```php
 <?php
-<?php
 // single.php, see connected twig example
 $context = Timber::get_context();
 $context['post'] = new Timber\Post(); // It's a new Timber\Post object, but an existing post from WordPress.
