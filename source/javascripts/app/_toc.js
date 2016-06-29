@@ -17,9 +17,6 @@
       scrollToHeight = 25;
     }
 
-    console.log(scrollToHeight);
-    console.log(width);
-
     global.toc = $("#toc").tocify({
       selectors: 'h1, h2',
       extendPage: false,
@@ -62,6 +59,16 @@
     $('.content').imagesLoaded( function() {
       global.toc.calculateHeights();
     });
+
+    $(".page-wrapper a").click(function(e) {    
+      var id = $(this).attr('href');
+      if (id.substring(0,1) == '#') {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(id).offset().top - 95
+        }, 1000);
+      }    
+  });
   });
 })(window);
 

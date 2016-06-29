@@ -130,10 +130,6 @@ nav {
     text-transform: uppercase;
     letter-spacing: .5px;
     position: relative;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
     padding: 8px;
     top: 50%;
     transform: translateY(-50%);
@@ -669,19 +665,14 @@ nav {
     clear:both;
   }
 
-
-
   a {
-    color: $main-text;
-    text-decoration: none;
-    background-image: -webkit-linear-gradient(bottom, transparent, transparent 1px, #5EBB4C 1px, #5EBB4C 2px, transparent 2px);
-    background-image: linear-gradient(0deg, transparent, transparent 1px, #5EBB4C 1px, #5EBB4C 2px, transparent 2px);
-    text-shadow: -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff;
-  }
-
-  a:hover {
-      color: #5EBB4C;
-    } 
+        text-decoration: none;
+        color: #5EBB4C;
+        background-image: none;
+      }
+      a:hover {
+        color: #387e3f;}
+    
 
 
   h1 {
@@ -748,6 +739,14 @@ nav {
 
   ul {
     list-style: none;
+    li{
+      a {
+        color: #5EBB4C;
+        background-image: none;
+        font-weight: 600;
+      }
+      a:hover {color: #387e3f;}
+    }
   }
 
 
@@ -755,6 +754,17 @@ nav {
     font-size: 1.25em;
     font-weight: 300;
     line-height: 1.6em;
+
+    a{
+      color: #000;
+      font-weight: 300;
+      background-image: -webkit-linear-gradient(bottom, transparent, transparent 1px, #5EBB4C 1px, #5EBB4C 2px, transparent 2px);
+      background-image: linear-gradient(0deg, transparent, transparent 1px, #5EBB4C 1px, #5EBB4C 2px, transparent 2px);
+      text-shadow: -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff;
+    }
+    a:hover {
+      color: #5EBB4C;
+    } 
   }
 
   p {
@@ -794,7 +804,17 @@ nav {
 
     a{
       color:#d7a954;
+      opacity: .5;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
 
+    }
+
+    a:hover {
+      color: #d7a954;
+      opacity: 1;
     }
 
     
@@ -809,6 +829,15 @@ nav {
 
       a {
         color: #148a43;
+        opacity: .5;
+        -o-transition:.5s;
+        -ms-transition:.5s;
+        -moz-transition:.5s;
+        -webkit-transition:.5s;
+      }
+
+      a:hover {
+        opacity: 1;
       }
   }
 
@@ -866,6 +895,11 @@ nav {
   img {
     max-width: 100%;
     padding: 15px 0;
+    a & {
+      text-decoration: none !important;
+      background-image: none !important;
+      text-shadow:none !important;
+    }
   }
 
 
