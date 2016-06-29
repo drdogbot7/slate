@@ -48,10 +48,17 @@
   }
 
   $(function() {  
-    var width = $( window ).width();
-    var scrollToHeight = 95;
-    if (width < 930) {
-      scrollToHeight = 25;
+    
+    var scrollToHeight = 0;
+
+    // checks that nav exists and has position fixed before setting offset
+    if ($('.topnav').length && $('.topnav').css('position') == 'fixed') {
+      // calculate offset based on nav height
+      var scrollToHeight = $('.topnav').height() + 30;
+      var width = $( window ).width();
+      if (width < 930) {
+        scrollToHeight = 25;
+      }
     }
 
     makeToc(scrollToHeight);
@@ -61,6 +68,7 @@
       global.toc.calculateHeights();
     });
 
+    // use scrollTo with offset for internal links and tocify search results
     $('body').on('click', '.page-wrapper a, .search-results a', function(e) {    
       var id = $(this).attr('href');
       if (id.substring(0,1) == '#') {
@@ -70,7 +78,7 @@
         }, 500);
       }    
     });
-    
+
   });
 })(window);
 
