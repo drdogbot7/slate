@@ -668,40 +668,6 @@ $i | int |
 
 
 
-### Class: \Timber\Post
-
-> This is the object you use to access or extend WordPress posts. Think of it as Timber's (more accessible) version of WP_Post. This is used throughout Timber to represent posts retrieved from WordPress making them available to Twig templates. See the PHP and Twig examples for an example of what it's like to work with this object in your code.
-
-###### Example
-###### PHP
-```php
-<?php
-// single.php, see connected twig example
-$context = Timber::get_context();
-$context['post'] = new Timber\Post(); // It's a new Timber\Post object, but an existing post from WordPress.
-Timber::render('single.twig', $context);
-?>
-```
-###### Twig
-```twig
-{# single.twig #}
-<article>
-    <h1 class="headline">{{post.title}}</h1>
-    <div class="body">
-        {{post.content}}
-    </div>
-</article>
-```
-###### HTML
-```html
-<article>
-    <h1 class="headline">The Empire Strikes Back</h1>
-    <div class="body">
-        It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.
-    </div>
-</article>
-```
-
 
 
 *This class extends \Timber\Core*

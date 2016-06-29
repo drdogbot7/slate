@@ -12,10 +12,12 @@ includes:
   - tools-for-twig
 
   - guides-header
+  - upgrade-guide
   - acf-cookbook
   - cheatsheet
   - cookbook-images
   - cookbook-text
+  - cookbook-twig
   - custom-page-templates
   - debugging
   - extending-timber
@@ -26,7 +28,6 @@ includes:
   - sidebars
   - template-locations
   - tests
-  - twig-tools
   - woocommerce
   - wp-integration
 

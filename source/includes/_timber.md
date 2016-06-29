@@ -16,6 +16,25 @@ Timber Class. Main class called Timber for this plugin.
 
 Name | Type | Description
 ---- | ---- | -----------
+[compile](#compile) | bool/string | 
+[compile_string](#compile_string) | bool/string | 
+[fetch](#fetch) | bool/string | 
+[get_calling_script_dir](#get_calling_script_dir) | string | 
+[get_calling_script_file](#get_calling_script_file) | string/null | 
+[get_context](#get_context) | array | 
+[get_pagination](#get_pagination) | array | mixed
+[get_post](#get_post) | array/bool/null | 
+[get_posts](#get_posts) | array/bool/null | 
+[get_sidebar](#get_sidebar) | bool/string | 
+[get_sidebar_from_php](#get_sidebar_from_php) | string | 
+[get_sites](#get_sites) | array | 
+[get_term](#get_term) | \Timber\Timber\Term/\Timber\WP_Error/null | 
+[get_terms](#get_terms) | mixed | 
+[get_widgets](#get_widgets) | \Timber\TimberFunctionWrapper | 
+[query_post](#query_post) | array/bool/null | 
+[query_posts](#query_posts) | array/bool/null | 
+[render](#render) | bool/string | 
+[render_string](#render_string) | bool/string | 
 
 ## __construct
 `__construct( )`
@@ -339,23 +358,6 @@ Tests whether we can use Timber
 
 
 
-
-### Class: \Timber\Timber
-
-> Timber Class. Main class called Timber for this plugin.
-
-###### Example
-###### PHP
-```php
-<?php
- $posts = Timber::get_posts();
- $posts = Timber::get_posts('post_type = article')
- $posts = Timber::get_posts(array('post_type' => 'article', 'category_name' => 'sports')); // uses wp_query format.
- $posts = Timber::get_posts(array(23,24,35,67), 'InkwellArticle');
- $context = Timber::get_context(); // returns wp favorites!
- $context['posts'] = $posts;
- Timber::render('index.twig', $context);
-```
 
 
 

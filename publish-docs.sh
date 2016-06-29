@@ -11,12 +11,13 @@ git checkout gh-pages
 # build site files and copy into timber repo
 cd ../slate
 git add source/includes
-# git commit -m 'Updating docs'
+git status
+git commit -m 'Updating docs'
 bundle exec middleman build
-rm ../timber/*
+rm -rf ../timber/*
 mv build/* ../timber/
 
 # step back into timber directory and publish to gh-pages
-#cd ../timber
-#git add .
-#git commit -m 'Updating docs'
+cd ../timber
+git add .
+git commit -m 'Updating docs'

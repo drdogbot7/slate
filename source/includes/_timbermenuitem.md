@@ -173,8 +173,6 @@ Return the type of the menu item
 
 
 
-### Class: \Timber\MenuItem
-
 
 
 *This class extends \Timber\Core*
