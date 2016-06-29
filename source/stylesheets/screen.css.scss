@@ -660,9 +660,9 @@ nav {
     @extend %left-col;
   }
 
-  &>ul, &>ol {
-    padding-left: $main-padding + 15px;
-  }
+  // &>ul, &>ol {
+  //   padding-left: $main-padding + 15px;
+  // }
 
   // the div is the tocify hidden div for placeholding stuff
   &>h1, &>h2, &>div {
@@ -708,6 +708,7 @@ nav {
     margin-top: 1em;
     color: #474747;
     font-weight: 400;
+    padding-top: .5em;
   }
 
   // h2s right after h1s should bump right up
@@ -729,6 +730,26 @@ nav {
     margin-top: 1.5em;
   }
 
+  pre + div {
+    padding-top: .25em;
+  }
+
+  table + div {
+    padding-top: .25em;
+  }
+
+  pre + p {
+    padding-top: 1em;
+  }
+
+  pre + ul {
+    padding-top: 1em;
+  }
+
+  ul {
+    list-style: none;
+  }
+
 
   h1 + p {
     font-size: 1.25em;
@@ -740,12 +761,13 @@ nav {
     line-height: 1.8em;
   }
 
+  pre + h5 {
+    margin-top: 3em;
+  }
 
-
-
-
-
-
+  pre + h4 {
+    margin-top: 3em;
+  }
 
   h3, h4, h5, h6 {
     @extend %header-font;
@@ -758,14 +780,14 @@ nav {
       font-size: 1.125em;
       font-weight: 700;
       margin-top: 1.5em;
-      margin-bottom: 1.25em;
+      margin-bottom: .5em;
   }
 
   h4, h6 {
     font-size: .875em;
     font-weight: 800;
     color: #d7a954;
-    margin-top: .75em;
+    margin-top: 2em;
     margin-bottom: .5em;
     text-transform: uppercase;
     letter-spacing: .3px;
@@ -843,7 +865,10 @@ nav {
 
   img {
     max-width: 100%;
+    padding: 15px 0;
   }
+
+
 
   code {
     // background-color: rgba(0,0,0,0.05);
