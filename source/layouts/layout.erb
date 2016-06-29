@@ -24,6 +24,9 @@ under the License.
 
     <style>
       <%= Rouge::Themes::Base16.render(:scope => '.highlight') %>
+      .highlight .err {
+        background-color: transparent;
+      }
     </style>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
