@@ -843,6 +843,10 @@ nav {
       a:hover {
         opacity: 1;
       }
+
+      code {
+        color: #1f8a43;
+      }
   }
 
   hr {
@@ -896,6 +900,14 @@ nav {
     margin-top: 0;
   }
 
+  ol {
+    padding-left: $main-padding + 15px;
+    li {
+      margin-top: 10px;
+
+    }
+  }
+
   img {
     max-width: 100%;
     padding: 15px 0;
@@ -908,11 +920,9 @@ nav {
 
 
 
+
   code {
-    // background-color: rgba(0,0,0,0.05);
-    // padding: 3px;
-    // border-radius: 3px;
-    color: #1f8a43;
+    color: #EA9429;
     @extend %break-words;
     white-space: pre-wrap;
     @extend %code-font;
@@ -1013,10 +1023,9 @@ nav {
 
     margin: 1.5em 0;
     &>p {
-      background-color: #5EBB4C;
-      border-radius: 5px;
+      background-color: #ffffff;
       padding: $code-annotation-padding;
-      color: #fff;
+      color: #5ebb4c;
       font-size: 1em;
       font-weight: 600;
     }
