@@ -1,5 +1,5 @@
 
-# TimberTerm
+# Timber\Term
 Terms: WordPress has got 'em, you want 'em. Categories. Tags. Custom Taxonomies. You don't care, you're a fiend. Well let's get this under control
 
 ###### PHP
@@ -44,7 +44,7 @@ Name | Type | Description
 name | string | the human-friendly name of the term (ex: French Cuisine)
 [path](#path) | string | 
 [posts](#posts) | array/bool/null | 
-taxonomy | strng | the WordPress taxonomy slug (ex: `post_tag` or `actors`)
+taxonomy | string | the WordPress taxonomy slug (ex: `post_tag` or `actors`)
 [title](#title) | string | 
 
 ## __construct
@@ -90,25 +90,12 @@ $tax | string |
 ## from
 `from( mixed $tid, mixed $taxonomy )`
 
-**returns:** `\static` 
+**returns:** `\Timber\static` 
 
 Name | Type | Description
 ---- | ---- | -----------
 $tid | mixed | 
 $taxonomy | mixed | 
-
-
-
-## <strike>get_page</strike>
-**DEPRECATED** 0.20.0 this was a dumb idea
-
-`get_page( int $i )`
-
-**returns:** `string` 
-
-Name | Type | Description
----- | ---- | -----------
-$i | int | 
 
 
 
@@ -177,56 +164,10 @@ $value | mixed |
 
 
 
-## <strike>url</strike>
-**DEPRECATED** 0.21.9 use TimberTerm::link() instead
-
-`url( )`
-
-**returns:** `string` 
 
 
 
+*This class extends \Timber\Core*
 
-### Class: TimberTerm
-
-> Terms: WordPress has got 'em, you want 'em. Categories. Tags. Custom Taxonomies. You don't care, you're a fiend. Well let's get this under control
-
-###### Example
-###### PHP
-```php
-<?php
-//Get a term by its ID
-$context['term'] = new TimberTerm(6);
-//Get a term when on a term archive page
-$context['term_page'] = new TimberTerm();
-//Get a term with a slug
-$context['team'] = new TimberTerm('patriots');
-//Get a team with a slug from a specific taxonomy
-$context['st_louis'] = new TimberTerm('cardinals', 'baseball');
-Timber::render('index.twig', $context);
-```
-###### Twig
-```twig
-<h2>{{term_page.name}} Archives</h2>
-<h3>Teams</h3>
-<ul>
-    <li>{{st_louis.name}} - {{st_louis.description}}</li>
-    <li>{{team.name}} - {{team.description}}</li>
-</ul>
-```
-###### HTML
-```html
-<h2>Team Archives</h2>
-<h3>Teams</h3>
-<ul>
-    <li>St. Louis Cardinals - Winner of 11 World Series</li>
-    <li>New England Patriots - Winner of 4 Super Bowls</li>
-</ul>
-```
-
-
-
-*This class extends \TimberCore*
-
-*This class implements \TimberCoreInterface*
+*This class implements \Timber\CoreInterface*
 

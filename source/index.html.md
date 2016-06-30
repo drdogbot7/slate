@@ -2,16 +2,22 @@
 title: Timber Docs
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - video-tutorials
+  - getting-started-header
   - getting-started-setup
   - getting-started-themeing
+  - video-tutorials
   - tools-for-twig
 
+  - guides-header
+  - upgrade-guide
   - acf-cookbook
+  - cheatsheet
+  - cookbook-images
+  - cookbook-text
+  - cookbook-twig
   - custom-page-templates
   - debugging
   - extending-timber
@@ -21,9 +27,11 @@ includes:
   - routing
   - sidebars
   - template-locations
+  - tests
   - woocommerce
   - wp-integration
 
+  - object-reference-header
   - timber
   - timberarchives
   - timbercomment
@@ -39,7 +47,6 @@ includes:
 
 search: true
 ---
-
 
 
 

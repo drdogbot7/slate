@@ -1,5 +1,5 @@
 
-# TimberMenuItem
+# Timber\MenuItem
 
 
 
@@ -31,13 +31,13 @@ $data | array/object |
 
 
 ## add_child
-`add_child( \TimberMenuItem $item )`
+`add_child( \Timber\TimberMenuItem $item )`
 
 **returns:** `void` 
 
 Name | Type | Description
 ---- | ---- | -----------
-$item | \TimberMenuItem | 
+$item | \Timber\TimberMenuItem | 
 
 
 
@@ -163,12 +163,19 @@ Gets the public label for the menu item
 	{% endfor %}
 ```
 
+## type
+`type( )`
 
-### Class: TimberMenuItem
+**returns:** `string` 
+
+Return the type of the menu item
 
 
 
-*This class extends \TimberCore*
 
-*This class implements \TimberCoreInterface*
+
+
+*This class extends \Timber\Core*
+
+*This class implements \Timber\CoreInterface*
 

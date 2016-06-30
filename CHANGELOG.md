@@ -1,8 +1,26 @@
 # Changelog
 
+## Version 1.3.3
+
+*June 11, 2016*
+
+Documentation and example changes.
+
+## Version 1.3.2
+
+*February 3, 2016*
+
+A small bugfix for slightly incorrect background colors on code samples in some cases.
+
+## Version 1.3.1
+
+*January 31, 2016*
+
+A small bugfix for incorrect whitespace in code blocks.
+
 ## Version 1.3
 
-*January 27th, 2016*
+*January 27, 2016*
 
 We've upgraded Middleman and a number of other dependencies, which should fix quite a few bugs.
 
@@ -29,7 +47,7 @@ Instead of `rake build` and `rake deploy`, you should now run `bundle exec middl
 
 ## Version 1.1
 
-*July 27th, 2014*
+*July 27, 2014*
 
 **Fixes:**
 

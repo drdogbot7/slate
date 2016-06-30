@@ -1,5 +1,5 @@
 
-# TimberImage
+# Timber\Image
 If TimberPost is the class you're going to spend the most time, TimberImage is the class you're going to have the most fun with.
 
 ###### PHP
@@ -39,14 +39,14 @@ Timber::render('single.twig', $context);
 Name | Type | Description
 ---- | ---- | -----------
 [alt](#alt) | string | alt text stored in WordPress
-[aspect](#aspect) | \float | 
+[aspect](#aspect) | \Timber\float | 
 caption | string | $caption the string stored in the WordPress database
 class | string | $class stores the CSS classes for the post (ex: "post post-type-book post-123")
 file_loc | string | $file_loc the location of the image file in the filesystem (ex: `/var/www/htdocs/wp-content/uploads/2015/08/my-pic.jpg`)
 [height](#height) | int | 
 id | integer | the ID of the image (which is a WP_Post)
 [link](#link) | void | 
-[parent](#parent) | bool/\TimberPost | 
+[parent](#parent) | bool/\Timber\TimberPost | 
 [path](#path) | string | the /relative/path/to/the/file
 post_status | string | 		$post_status 	the status of a post ("draft", "publish", etc.)
 post_type | string | 	$post_type 		the name of the post type, this is the machine name (so "my_custom_post_type" as opposed to "My Custom Post Type")
@@ -98,7 +98,7 @@ $iid | int/string |
 ## aspect
 `aspect( )`
 
-**returns:** `\float` 
+**returns:** `\Timber\float` 
 
 ###### Twig
 ```twig
@@ -120,11 +120,15 @@ Get a PHP array with pathinfo() info from the file
 
 
 ## <strike>get_url</strike>
-**DEPRECATED** use src() instead
+**DEPRECATED** since 0.21.9 use src() instead
 
-`get_url( )`
+`get_url( string $size="" )`
 
 **returns:** `string` 
+
+Name | Type | Description
+---- | ---- | -----------
+$size | string | 
 
 
 
@@ -161,7 +165,7 @@ Returns the link to an image attachment's Permalink page (NOT the link for the i
 ## parent
 `parent( )`
 
-**returns:** `bool/\TimberPost` 
+**returns:** `bool/\Timber\TimberPost` 
 
 
 
@@ -199,11 +203,15 @@ $size | string | a size known to WordPress (like "medium")
 ```
 
 ## <strike>url</strike>
-**DEPRECATED** use src() instead
+**DEPRECATED** since 0.21.9 use src() instead
 
-`url( )`
+`url( string $size="" )`
 
 **returns:** `string` 
+
+Name | Type | Description
+---- | ---- | -----------
+$size | string | 
 
 
 
@@ -228,49 +236,21 @@ $size | string | a size known to WordPress (like "medium")
 
 
 
+## get_post_custom
+`get_post_custom( mixed $iid )`
 
-### Class: TimberImage
+**returns:** `array` 
 
-> If TimberPost is the class you're going to spend the most time, TimberImage is the class you're going to have the most fun with.
-
-###### Example
-###### PHP
-```php
-<?php
-$context = Timber::get_context();
-$post = new TimberPost();
-$context['post'] = $post;
-// lets say you have an alternate large 'cover image' for your post stored in a custom field which returns an image ID
-$cover_image_id = $post->cover_image;
-$context['cover_image'] = new TimberImage($cover_image_id);
-Timber::render('single.twig', $context);
-```
-###### Twig
-```twig
-<article>
-	<img src="{{cover_image.src}}" class="cover-image" />
-	<h1 class="headline">{{post.title}}</h1>
-	<div class="body">
-		{{post.content}}
-	</div>
-	<img src="{{ Image(post.custom_field_with_image_id).src }}" alt="Another way to initialize images as TimberImages, but within Twig" />
-</article>
-```
-###### HTML
-```html
-<article>
-	<img src="http://example.org/wp-content/uploads/2015/06/nevermind.jpg" class="cover-image" />
-	<h1 class="headline">Now you've done it!</h1>
-	<div class="body">
-		Whatever whatever
-	</div>
-	<img src="http://example.org/wp-content/uploads/2015/06/kurt.jpg" alt="Another way to initialize images as TimberImages, but within Twig" />
-</article>
-```
+Name | Type | Description
+---- | ---- | -----------
+$iid | mixed | 
 
 
 
-*This class extends \TimberPost*
 
-*This class implements \TimberCoreInterface*
+
+
+*This class extends \Timber\Post*
+
+*This class implements \Timber\CoreInterface*
 
