@@ -27,3 +27,4 @@ mv ../slate/build/* .
 echo 'Publishing to GH pages'
 git add -u
 git commit -m 'Updating docs'
+git push
