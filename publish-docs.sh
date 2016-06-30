@@ -1,23 +1,29 @@
 #!/usr/bin/env bash
 set -o errexit #abort if any command fails
-pwd
 
 # cd to timber directory and generate new docs
 cd ../timber
 git checkout updating-wiki-docs
+echo 'Generating docs'
 sh ./bin/generate-docs.sh
-git checkout gh-pages
 
 # build site files and copy into timber repo
 cd ../slate
-git add source/includes
-git status
+if git diff-index --quiet HEAD --; then
+    echo 'No changes detected, exiting'
+    exit
+fi
+
+git add .
 git commit -m 'Updating docs'
+echo 'Building site files'
 bundle exec middleman build
-rm -rf ../timber/*
-mv build/* ../timber/
+cd ../timber
+git checkout gh-pages
+git ls-files | xargs rm
+mv ../slate/build/* .
 
 # step back into timber directory and publish to gh-pages
-cd ../timber
-git add .
+echo 'Publishing to GH pages'
+git add -u
 git commit -m 'Updating docs'
