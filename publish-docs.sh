@@ -3,7 +3,7 @@ set -o errexit #abort if any command fails
 
 # cd to timber directory and generate new docs
 cd ../timber
-git checkout updating-wiki-docs
+git checkout master
 echo 'Generating docs'
 sh ./bin/generate-docs.sh
 
