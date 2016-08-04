@@ -20,6 +20,7 @@ includes:
   - cookbook-twig
   - custom-page-templates
   - debugging
+  - escapers
   - extending-timber
   - filters
   - pagination
