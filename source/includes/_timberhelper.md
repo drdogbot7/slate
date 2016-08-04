@@ -45,13 +45,13 @@ $html | mixed |
 
 
 ## error_log
-`error_log( mixed $arg )`
+`error_log( mixed $error )`
 
 **returns:** `void` 
 
 Name | Type | Description
 ---- | ---- | -----------
-$arg | mixed | that you want to error_log
+$error | mixed | 
 
 
 
@@ -219,14 +219,16 @@ $prop | mixed |
 
 
 
-## paginate_links
-`paginate_links( string $args="" )`
+## <strike>paginate_links</strike>
+**DEPRECATED** since 1.1.2
+
+`paginate_links( array $args=array() )`
 
 **returns:** `array` 
 
 Name | Type | Description
 ---- | ---- | -----------
-$args | string | 
+$args | array | 
 
 
 

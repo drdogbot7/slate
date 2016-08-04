@@ -1,12 +1,12 @@
 
 # Timber\User
-This is used in Timber to represent users retrived from WordPress. You can call `$my_user = new TimberUser(123);` directly, or access it through the `{{ post.author }}` method.
+This is used in Timber to represent users retrived from WordPress. You can call `$my_user = new Timber\User(123);` directly, or access it through the `{{ post.author }}` method.
 
 ###### PHP
 ```php
 <?php
-$context['current_user'] = new TimberUser();
-$context['post'] = new TimberPost();
+$context['current_user'] = new Timber\User();
+$context['post'] = new Timber\Post();
 Timber::render('single.twig', $context);
 ```
 ###### Twig

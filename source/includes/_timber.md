@@ -19,8 +19,6 @@ Name | Type | Description
 [compile](#compile) | bool/string | 
 [compile_string](#compile_string) | bool/string | 
 [fetch](#fetch) | bool/string | 
-[get_calling_script_dir](#get_calling_script_dir) | string | 
-[get_calling_script_file](#get_calling_script_file) | string/null | 
 [get_context](#get_context) | array | 
 [get_pagination](#get_pagination) | array | mixed
 [get_post](#get_post) | array/bool/null | 
@@ -107,34 +105,6 @@ $cache_mode | string |
 
 
 
-## get_calling_script_dir
-`get_calling_script_dir( mixed $offset )`
-
-**returns:** `string` 
-
-Get calling script dir.
-
-Name | Type | Description
----- | ---- | -----------
-$offset | mixed | 
-
-
-
-## <strike>get_calling_script_file</strike>
-**DEPRECATED** since 0.20.0
-
-`get_calling_script_file( mixed $offset )`
-
-**returns:** `string/null` 
-
-Get calling script file.
-
-Name | Type | Description
----- | ---- | -----------
-$offset | mixed | 
-
-
-
 ## get_context
 `get_context( )`
 
@@ -194,7 +164,7 @@ $return_collection | bool |
 ```
 
 ## get_sidebar
-`get_sidebar( string $sidebar="", array $data=array() )`
+`get_sidebar( string $sidebar="sidebar.php", array $data=array() )`
 
 **returns:** `bool/string` 
 
