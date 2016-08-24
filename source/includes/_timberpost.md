@@ -47,6 +47,7 @@ id | string | $id the numeric WordPress id of a post
 [link](#link) | string | ex: http://example.org/2015/07/my-awesome-post
 [next](#next) | mixed | 
 [parent](#parent) | bool/\Timber\Timber\Post | 
+[password_required](#password_required) | boolean | 
 [path](#path) | string | 
 post_status | string | 		$post_status 	the status of a post ("draft", "publish", etc.)
 post_type | string | 	$post_type 		the name of the post type, this is the machine name (so "my_custom_post_type" as opposed to "My Custom Post Type")
@@ -496,6 +497,15 @@ Gets the parent (if one exists) from a post as a Timber\Post object (or whatever
 ```twig
 	Parent page: <a href="{{ post.parent.link }}">{{ post.parent.title }}</a>
 ```
+
+## password_required
+`password_required( )`
+
+**returns:** `boolean` 
+
+whether post requires password and correct password has been provided
+
+
 
 ## path
 `path( )`
