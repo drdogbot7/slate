@@ -20,6 +20,7 @@ echo 'Building site files'
 bundle exec middleman build
 cd ../timber
 git checkout gh-pages
+git pull
 git ls-files | xargs rm
 mv ../slate/build/* .
 
