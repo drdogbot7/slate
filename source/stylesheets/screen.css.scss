@@ -334,7 +334,7 @@ nav {
     position: relative;
 
     input {
-      background: $nav-bg;
+      background: transparent;
       border-width: 0 0 2px 0;
       border-color: #19b273;
       padding: 6px 0 6px 20px;
@@ -829,12 +829,12 @@ nav {
   h5 {
       font-size: .875em;
       font-weight: 600;
-      color: #1f8a43;
+      color: darken(#19b273, 5%);
       margin-top: .75em;
       margin-bottom: .5em;
 
       a {
-        color: #148a43;
+        color: darken(#19b273, 5%);
         opacity: .5;
         -o-transition:.5s;
         -ms-transition:.5s;
@@ -844,6 +844,7 @@ nav {
 
       a:hover {
         opacity: 1;
+        color: darken(#19b273, 5%);
       }
 
       code {
