@@ -26,11 +26,11 @@ under the License.
 
 [data-unique="object-reference"], [data-unique="getting-started"], [data-unique="guides"] {
  font-size:1.2em;
- color: #72b86f;
+ color: #19B273;
  font-weight: 600;
 
  a {
-  color: #72b86f;
+  color: #19B273;
  }
 }
 
@@ -54,7 +54,8 @@ html, body {
 
 .topnav {
   overflow: hidden;
-  background-image: url("../images/timber-bg-mesh.jpg");
+  // background-image: url("../images/timber-bg-mesh.jpg");
+  background-color: $topnav-bg;
   z-index: 100;
   position: fixed;
   width: 100%;
@@ -66,7 +67,7 @@ html, body {
 #logo {
   float: left;
   margin: auto 40px auto 15px;
-  width: 140px;
+  width: 105px;
   height: $topnav-height;
 
   img{
@@ -333,9 +334,9 @@ nav {
     position: relative;
 
     input {
-      background: $nav-bg;
+      background: transparent;
       border-width: 0 0 2px 0;
-      border-color: #3d8442;
+      border-color: #19b273;
       padding: 6px 0 6px 20px;
       box-sizing: border-box;
       margin: $nav-v-padding $nav-padding;
@@ -350,7 +351,7 @@ nav {
       position: absolute;
       top: 17px;
       left: $nav-padding;
-      color: #5ebb4c;
+      color: #19B273;
       @extend %icon-search;
     }
   }
@@ -418,7 +419,7 @@ nav {
   }
 
   li:hover {
-    color: #5ebb4c;
+    color: #19B273;
   }
 
   // This is the currently selected ToC entry
@@ -455,7 +456,7 @@ nav {
     }
 
     a:hover {
-      color: #5ebb4c;
+      color: #19B273;
     }
 
     li {
@@ -474,7 +475,7 @@ nav {
     display: block;
     $side-pad: $main-padding / 2 - 8px;
     padding: $side-pad $side-pad $side-pad;
-    background-color: #5ebb4c;
+    background-color: #19B273;
     transform-origin: 0 0;
     transform: rotate(-90deg) translate(-100%, 0);
     border-radius: 0 0 5px 5px;
@@ -614,7 +615,7 @@ nav {
   #getting-started, #guides, #object-reference {
     //padding-top: ($topnav-height + 50px);
     margin-bottom: 0;
-    color: #3d8442;
+    color: #19B273;
     font-size:1em;
     text-transform: uppercase;
     letter-spacing:.5px;
@@ -672,7 +673,7 @@ nav {
 
   a {
         text-decoration: none;
-        color: #5EBB4C;
+        color: #19B273;
         background-image: none;
       }
       a:hover {
@@ -687,7 +688,7 @@ nav {
     //padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 1em;
-    color: #5ebb4c;
+    color: darken(#19B273, 5%);
     font-weight: 400;
     line-height: 1.2em;
   }
@@ -746,7 +747,7 @@ nav {
     list-style: none;
     li{
       a {
-        color: #5EBB4C;
+        color: #19B273;
         background-image: none;
         font-weight: 600;
       }
@@ -763,12 +764,12 @@ nav {
     a{
       color: #000;
       font-weight: 300;
-      background-image: -webkit-linear-gradient(bottom, transparent, transparent 1px, #5EBB4C 1px, #5EBB4C 2px, transparent 2px);
-      background-image: linear-gradient(0deg, transparent, transparent 1px, #5EBB4C 1px, #5EBB4C 2px, transparent 2px);
+      background-image: -webkit-linear-gradient(bottom, transparent, transparent 1px, #19B273 1px, #19B273 2px, transparent 2px);
+      background-image: linear-gradient(0deg, transparent, transparent 1px, #19B273 1px, #19B273 2px, transparent 2px);
       text-shadow: -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, 1px 1px 0 #ffffff, -1px -1px 0 #ffffff;
     }
     a:hover {
-      color: #5EBB4C;
+      color: #19B273;
     } 
   }
 
@@ -801,14 +802,14 @@ nav {
   h4, h6 {
     font-size: .875em;
     font-weight: 800;
-    color: #d7a954;
+    color: darken(#19b273, 5%);
     margin-top: 2em;
     margin-bottom: .5em;
     text-transform: uppercase;
     letter-spacing: .3px;
 
     a{
-      color:#d7a954;
+      color:darken(#19b273, 5%);
       opacity: .5;
       -o-transition:.5s;
       -ms-transition:.5s;
@@ -818,7 +819,7 @@ nav {
     }
 
     a:hover {
-      color: #d7a954;
+      color: darken(#19b273, 5%);
       opacity: 1;
     }
 
@@ -828,12 +829,12 @@ nav {
   h5 {
       font-size: .875em;
       font-weight: 600;
-      color: #1f8a43;
+      color: darken(#19b273, 5%);
       margin-top: .75em;
       margin-bottom: .5em;
 
       a {
-        color: #148a43;
+        color: darken(#19b273, 5%);
         opacity: .5;
         -o-transition:.5s;
         -ms-transition:.5s;
@@ -843,6 +844,7 @@ nav {
 
       a:hover {
         opacity: 1;
+        color: darken(#19b273, 5%);
       }
 
       code {
@@ -870,7 +872,7 @@ nav {
 
     th {
       padding: 5px 10px;
-      background-color: #5ebb4c;
+      background-color: #19B273;
       color: #fff;
       text-transform: uppercase;
       text-size: .75em;
@@ -923,7 +925,7 @@ nav {
 
 
   code {
-    color: #EA9429;
+    color: #a63db0;
     @extend %break-words;
     white-space: pre-wrap;
     @extend %code-font;
@@ -979,8 +981,8 @@ nav {
     padding: 2px;
     margin: -2px;
     border-radius: 4px;
-    border: 1px solid #d7d552;
-    background: linear-gradient(to top left, #d7d552 0%, #d7d552 100%);
+    border: 1px solid #54ffb9;
+    background: linear-gradient(to top left, #54ffb9 0%, #54ffb9 100%);
   }
 }
 
@@ -1026,7 +1028,7 @@ nav {
     &>p {
       background-color: #ffffff;
       padding: $code-annotation-padding;
-      color: #5ebb4c;
+      color: #19B273;
       font-size: 1em;
       font-weight: 600;
     }
