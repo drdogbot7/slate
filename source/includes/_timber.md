@@ -30,8 +30,8 @@ Name | Type | Description
 [get_terms](#get_terms) | mixed | 
 [get_widgets](#get_widgets) | \Timber\TimberFunctionWrapper | 
 [query_post](#query_post) | array/bool/null | 
-[query_posts](#query_posts) | array/bool/null | 
-[render](#render) | bool/string | 
+[query_posts](#query_posts) | \Timber\PostCollection | 
+[render](#render) | boolean/string | 
 [render_string](#render_string) | bool/string | 
 
 ## __construct
@@ -271,7 +271,7 @@ $PostClass | string |
 ## query_posts
 `query_posts( bool $query=false, string $PostClass="Timber\Post" )`
 
-**returns:** `array/bool/null` 
+**returns:** `\Timber\PostCollection` 
 
 Query posts.
 
@@ -285,7 +285,7 @@ $PostClass | string |
 ## render
 `render( mixed $filenames, array $data=array(), bool $expires=false, string $cache_mode="default" )`
 
-**returns:** `bool/string` 
+**returns:** `boolean/string` 
 
 Render function.
 

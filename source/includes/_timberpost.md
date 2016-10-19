@@ -101,6 +101,13 @@ Return the author of a post
 	</p>
 ```
 
+## authors
+`authors( )`
+
+**returns:** `void` 
+
+
+
 ## categories
 `categories( )`
 
@@ -120,7 +127,7 @@ Returns a category attached to a post
 
 
 ## children
-`children( string $post_type="any", bool/string/bool $childPostClass=false )`
+`children( string/string/array $post_type="any", bool/string/bool $childPostClass=false )`
 
 **returns:** `array` 
 
@@ -128,7 +135,7 @@ Returns an array of children on the post as Timber\Posts (or other claass as you
 
 Name | Type | Description
 ---- | ---- | -----------
-$post_type | string | _optional_ use to find children of a particular post type (attachment vs. page for example). You might want to restrict to certain types of children in case other stuff gets all mucked in there. You can use 'parent' to use the parent's post type
+$post_type | string/string/array | _optional_ use to find children of a particular post type (attachment vs. page for example). You might want to restrict to certain types of children in case other stuff gets all mucked in there. You can use 'parent' to use the parent's post type or you can pass an array of post types.
 $childPostClass | bool/string/bool | _optional_ a custom post class (ex: 'MyTimber\Post') to return the objects as. By default (false) it will use Timber\Post::$post_class value.
 
 ###### Twig
@@ -575,7 +582,30 @@ $tax | string/string/array | What taxonom(y|ies) to pull from. Defaults to all r
 $merge | bool | Should the resulting array be one big one (true)? Or should it be an array of sub-arrays for each taxonomy (false)?
 $TermClass | string | 
 
-
+###### Twig
+```twig
+	<section id="job-feed">
+	{% for post in job %}
+	<div class="job">
+	  <h2>{{ post.title }}</h2> 
+	   <p>{{ post.terms('category') | join(', ') }}
+	 </div>
+	{% endfor %}    
+	</section>
+```
+###### HTML
+```html
+	<section id="job-feed">
+	  <div class="job">
+		   <h2>Cheese Maker</h2>
+	    <p>Food, Cheese, Fromage</p>
+	  </div>
+	  <div class="job">
+		   <h2>Mime</h2>
+	    <p>Performance, Silence</p>
+	  </div>
+	</section>
+```
 
 ## thumbnail
 `thumbnail( )`
@@ -674,6 +704,15 @@ $query | mixed |
 Name | Type | Description
 ---- | ---- | -----------
 $i | int | 
+
+
+
+## maybe_show_password_form
+`maybe_show_password_form( )`
+
+**returns:** `string/void` 
+
+If the Password form is to be shown, show it!
 
 
 

@@ -33,7 +33,9 @@ $len | mixed |
 
 
 
-## close_tags
+## <strike>close_tags</strike>
+**DEPRECATED** since 1.2.0
+
 `close_tags( mixed $html )`
 
 **returns:** `string` 
@@ -232,6 +234,20 @@ $args | array |
 
 
 
+## pluck
+`pluck( array $array, string $key )`
+
+**returns:** `void` 
+
+Plucks the values of a certain key from an array of objects
+
+Name | Type | Description
+---- | ---- | -----------
+$array | array | 
+$key | string | 
+
+
+
 ## start_timer
 `start_timer( )`
 
@@ -286,7 +302,9 @@ $force | bool |
 	Timber::render('single.twig', $context);
 ```
 
-## trim_words
+## <strike>trim_words</strike>
+**DEPRECATED** since 1.2.0
+
 `trim_words( mixed $text, mixed $num_words=55, mixed $more=null, string $allowed_tags="p a span b i br blockquote" )`
 
 **returns:** `string` 
