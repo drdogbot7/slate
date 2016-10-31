@@ -12,7 +12,7 @@ sh ./bin/generate-docs.sh
 cd ../slate
 if git diff-index --quiet HEAD --; then
     echo 'No changes detected, exiting'
-    exit
+    #exit
 fi
 
 git add .
