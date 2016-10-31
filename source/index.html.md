@@ -47,8 +47,11 @@ includes:
   - timbertheme
   - timberuser
 
+  - helpers-header
   - timberhelper
   - timberimagehelper
+  - timbertexthelper
+  - timberurlhelper
 
 search: true
 ---
