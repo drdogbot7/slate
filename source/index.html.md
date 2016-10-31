@@ -40,11 +40,15 @@ includes:
   - timbermenu
   - timbermenuitem
   - timberpost
+  - timberpostpreview
+  - timberpostquery
   - timbersite
   - timberterm
   - timbertheme
   - timberuser
+
   - timberhelper
+  - timberimagehelper
 
 search: true
 ---
