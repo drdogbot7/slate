@@ -33,19 +33,6 @@ $prefs | mixed |
 
 
 
-## is_search_query
-`is_search_query( string $url )`
-
-**returns:** `boolean` 
-
-Checks to see whether the given URL has a search query in it (s=*)
-
-Name | Type | Description
----- | ---- | -----------
-$url | string | 
-
-
-
 ## paginate_links
 `paginate_links( array $args=array() )`
 
@@ -66,6 +53,17 @@ Name | Type | Description
 ---- | ---- | -----------
 $prefs | array | 
 $wp_query | mixed | 
+
+
+
+## sanitize_args
+`sanitize_args( mixed $args )`
+
+**returns:** `void` 
+
+Name | Type | Description
+---- | ---- | -----------
+$args | mixed | 
 
 
 

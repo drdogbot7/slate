@@ -149,6 +149,20 @@ The slug for the menu item
 	    {% endfor %}
 	</ul>
 
+## thumbnail
+`thumbnail( )`
+
+**returns:** `string` the public thumbnail url
+
+Gets the post thumbnail image object
+
+###### Twig
+```twig
+	{% for item in menu.items %}
+	    <li><a href="{{ item.link }}"><img src="{{ item.thumbnail }}"/></a></li>
+	{% endfor %}
+```
+
 ## title
 `title( )`
 

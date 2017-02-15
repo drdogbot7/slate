@@ -160,6 +160,13 @@ $date_format | string |
 	</article>
 ```
 
+## depth
+`depth( )`
+
+**returns:** `void` 
+
+
+
 ## is_child
 `is_child( )`
 
@@ -216,6 +223,17 @@ $time_format | string |
 	  <p class="comment">Happy Birthday!</p>
 	</article>
 ```
+
+## update_depth
+`update_depth( int $depth )`
+
+**returns:** `void` 
+
+Name | Type | Description
+---- | ---- | -----------
+$depth | int | 
+
+
 
 
 

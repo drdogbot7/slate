@@ -203,6 +203,17 @@ $link | mixed |
 
 
 
+## unpreslashit
+`unpreslashit( mixed $path )`
+
+**returns:** `string` 
+
+Name | Type | Description
+---- | ---- | -----------
+$path | mixed | 
+
+
+
 ## url_to_file_system
 `url_to_file_system( mixed $url )`
 
@@ -213,6 +224,19 @@ Takes a url and figures out its place based in the file system based on path NOT
 Name | Type | Description
 ---- | ---- | -----------
 $url | mixed | 
+
+
+
+## user_trailingslashit
+`user_trailingslashit( string $link )`
+
+**returns:** `string` 
+
+Pass links through user_trailingslashit handling query strings properly
+
+Name | Type | Description
+---- | ---- | -----------
+$link | string | 
 
 
 

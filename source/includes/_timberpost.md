@@ -162,7 +162,7 @@ $args | array |
 
 
 ## comments
-`comments( int $count, string $order="wp", string $type="comment", string $status="approve", string $CommentClass="Timber\Comment" )`
+`comments( mixed/int $count=null, string $order="wp", string $type="comment", string $status="approve", string $CommentClass="Timber\Comment" )`
 
 **returns:** `bool/array` 
 
@@ -170,7 +170,7 @@ Gets the comments on a Timber\Post and returns them as an array of [TimberCommen
 
 Name | Type | Description
 ---- | ---- | -----------
-$count | int | Set the number of comments you want to get. `0` is analogous to "all"
+$count | mixed/int | Set the number of comments you want to get. `0` is analogous to "all"
 $order | string | use ordering set in WordPress admin, or a different scheme
 $type | string | For when other plugins use the comments table for their own special purposes, might be set to 'liveblog' or other depending on what's stored in yr comments table
 $status | string | Could be 'pending', etc.

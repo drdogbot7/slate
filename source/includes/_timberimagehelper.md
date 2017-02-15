@@ -30,6 +30,19 @@ adds a 'relative' key to wp_upload_dir() result. It will contain the relative ur
 
 
 
+## analyze_url
+`analyze_url( mixed $url )`
+
+**returns:** `array`       an array (see keys in code below)
+
+Takes in an URL and breaks it into components, that will then be used in the different steps of image processing. The image is expected to be either part of a theme, plugin, or an upload.
+
+Name | Type | Description
+---- | ---- | -----------
+$url | mixed | 
+
+
+
 ## delete_generated_files
 `delete_generated_files( mixed $local_file )`
 
@@ -229,6 +242,19 @@ $file | mixed |
 
 
 
+## theme_url_to_dir
+`theme_url_to_dir( mixed $src )`
+
+**returns:** `string` full path to the file in question
+
+Converts a URL located in a theme directory into the raw file path
+
+Name | Type | Description
+---- | ---- | -----------
+$src | mixed | 
+
+
+
 ## add_actions
 `add_actions( )`
 
@@ -244,6 +270,30 @@ Deletes all resized versions of an image when the source is deleted or its meta 
 **returns:** `void` 
 
 Adds a constant defining the path to the content directory relative to the site for example /wp-content or /content
+
+
+
+## is_in_theme_dir
+`is_in_theme_dir( mixed $path )`
+
+**returns:** `bool` 
+
+Name | Type | Description
+---- | ---- | -----------
+$path | mixed | 
+
+
+
+## maybe_realpath
+`maybe_realpath( mixed $path )`
+
+**returns:** `string` 			the resolved path
+
+Runs realpath to resolve symbolic links (../, etc). But only if it's a path and not a URL
+
+Name | Type | Description
+---- | ---- | -----------
+$path | mixed | 
 
 
 

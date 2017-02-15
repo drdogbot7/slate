@@ -67,6 +67,13 @@ $field | mixed |
 
 
 
+## icon
+`icon( )`
+
+**returns:** `void` 
+
+
+
 ## link
 `link( )`
 
@@ -96,10 +103,21 @@ Returns the link to the site's home.
 
 
 
+## icon_multisite
+`icon_multisite( mixed $site_id )`
+
+**returns:** `void` 
+
+Name | Type | Description
+---- | ---- | -----------
+$site_id | mixed | 
+
+
+
 ## switch_to_blog
 `switch_to_blog( string/\Timber\integer/null $site_name_or_id )`
 
-**returns:** `array` with the ID of the old and new blogs
+**returns:** `integer` with the ID of the new blog
 
 Switches to the blog requested in the request
 

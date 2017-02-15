@@ -33,13 +33,13 @@ last_name | string | The last name of the user
 [slug](#slug) | string | ex baberaham-lincoln
 
 ## __construct
-`__construct( bool/int/bool $uid=false )`
+`__construct( bool/object/int/bool $uid=false )`
 
 **returns:** `void` 
 
 Name | Type | Description
 ---- | ---- | -----------
-$uid | bool/int/bool | 
+$uid | bool/object/int/bool | 
 
 
 

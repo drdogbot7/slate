@@ -194,8 +194,8 @@ $size | string | a size known to WordPress (like "medium")
 
 ###### Twig
 ```twig
-	<h1>{{post.title}}</h1>
-	<img src="{{post.thumbnail.src}}" />
+	<h1>{{ post.title }}</h1>
+	<img src="{{ post.thumbnail.src }}" />
 ```
 ###### HTML
 ```html
