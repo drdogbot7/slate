@@ -1,3 +1,7 @@
+# start in slate directory and install gems
+gem install bundler
+bundle install
+
 #!/usr/bin/env bash
 set -o errexit #abort if any command fails
 
