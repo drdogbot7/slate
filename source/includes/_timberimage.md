@@ -184,7 +184,7 @@ Returns the link to an image attachment's Permalink page (NOT the link for the i
 ```
 
 ## src
-`src( string $size="" )`
+`src( string $size="full" )`
 
 **returns:** `bool/string` 
 

@@ -104,7 +104,12 @@ $taxonomy | mixed |
 
 **returns:** `string` 
 
+Returns a full link to the term archive page like `http://example.com/category/news`
 
+###### Twig
+```twig
+	See all posts in: <a href="{{ term.link }}">{{ term.name }}</a>
+```
 
 ## meta
 `meta( string $field_name )`
@@ -115,14 +120,25 @@ Name | Type | Description
 ---- | ---- | -----------
 $field_name | string | 
 
-
+###### Twig
+```twig
+	<div class="location-info">
+	  <h2>{{ term.name }}</h2>
+	  <p>{{ term.meta('address') }}</p>
+	</div>
+```
 
 ## path
 `path( )`
 
 **returns:** `string` 
 
+Returns a relative link (path) to the term archive page like `/category/news`
 
+###### Twig
+```twig
+	See all posts in: <a href="{{ term.path }}">{{ term.name }}</a>
+	`
 
 ## posts
 `posts( mixed/int $numberposts_or_args=10, string $post_type_or_class="any", string $post_class="" )`
@@ -137,7 +153,7 @@ $post_class | string |
 
 ###### Twig
 ```twig
-	<h4>Recent posts in {{term.name}}</h4>
+	<h4>Recent posts in {{ term.name }}</h4>
 	<ul>
 	{% for post in term.posts(3, 'post') %}
 	    <li><a href="{{post.link}}">{{post.title}}</a></li>

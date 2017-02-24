@@ -67,6 +67,17 @@ $args | mixed |
 
 
 
+## sanitize_url_params
+`sanitize_url_params( mixed $add_args )`
+
+**returns:** `void` 
+
+Name | Type | Description
+---- | ---- | -----------
+$add_args | mixed | 
+
+
+
 
 
 
