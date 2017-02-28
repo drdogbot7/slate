@@ -116,6 +116,8 @@ Returns a full link to the term archive page like `http://example.com/category/n
 
 **returns:** `string` 
 
+Retrieves and outputs meta information stored with a term. This will use both data stored under (old) ACF hacks and new (WP 4.6+) where term meta has its own table. If retrieving a special ACF field (repeater, etc.) you can use the output immediately in Twig — no further processing is required.
+
 Name | Type | Description
 ---- | ---- | -----------
 $field_name | string | 
