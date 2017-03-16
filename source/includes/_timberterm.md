@@ -140,7 +140,7 @@ Returns a relative link (path) to the term archive page like `/category/news`
 ###### Twig
 ```twig
 	See all posts in: <a href="{{ term.path }}">{{ term.name }}</a>
-	`
+```
 
 ## posts
 `posts( mixed/int $numberposts_or_args=10, string $post_type_or_class="any", string $post_class="" )`

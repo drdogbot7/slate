@@ -18,6 +18,30 @@ $html | mixed |
 
 
 
+## remove_tags
+`remove_tags( mixed $string, array $tags=array() )`
+
+**returns:** `void` 
+
+Name | Type | Description
+---- | ---- | -----------
+$string | mixed | 
+$tags | array | 
+
+
+
+## starts_with
+`starts_with( string $haystack, string $needle )`
+
+**returns:** `boolean` 
+
+Name | Type | Description
+---- | ---- | -----------
+$haystack | string | 
+$needle | string | 
+
+
+
 ## trim_characters
 `trim_characters( mixed $text, mixed $num_chars=60, mixed $more=null )`
 
