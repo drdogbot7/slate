@@ -14,15 +14,16 @@ sh ./bin/generate-docs.sh
 
 # build site files and copy into timber repo
 cd ../slate
-if git diff-index --quiet HEAD --; then
-    echo 'No changes detected, exiting'
-    #exit
-fi
+# if git diff-index --quiet HEAD --; then
+#     echo 'No changes detected, exiting'
+#     #exit
+# fi
 
 git add .
 git commit -m 'Updating docs'
 echo 'Building site files'
 bundle exec middleman build
+cp bin/.gitignore build/.gitignore
 cd ../timber
 git checkout gh-pages
 git pull
