@@ -23,6 +23,7 @@ includes:
   - escapers
   - extending-timber
   - filters
+  - internationalization
   - pagination
   - performance
   - routing
