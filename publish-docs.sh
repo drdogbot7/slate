@@ -7,7 +7,7 @@ set -o errexit #abort if any command fails
 
 # cd to timber directory and generate new docs
 cd ../timber
-git checkout docs
+git checkout docs-script
 git merge master
 composer install
 echo 'Generating docs'
