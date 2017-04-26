@@ -28,7 +28,7 @@ Name | Type | Description
 [get_sites](#get_sites) | array | 
 [get_term](#get_term) | \Timber\Timber\Term/\Timber\WP_Error/null | 
 [get_terms](#get_terms) | mixed | 
-[get_widgets](#get_widgets) | \Timber\TimberFunctionWrapper | 
+[get_widgets](#get_widgets) | \Timber\FunctionWrapper | 
 [query_post](#query_post) | array/bool/null | 
 [query_posts](#query_posts) | \Timber\PostCollection | 
 [render](#render) | boolean/string | 
@@ -235,15 +235,15 @@ $TermClass | string |
 
 
 ## get_widgets
-`get_widgets( mixed $widget_id )`
+`get_widgets( int/string $widget_id )`
 
-**returns:** `\Timber\TimberFunctionWrapper` 
+**returns:** `\Timber\FunctionWrapper` 
 
 Get widgets.
 
 Name | Type | Description
 ---- | ---- | -----------
-$widget_id | mixed | 
+$widget_id | int/string | Optional. Index, name or ID of dynamic sidebar. Default 1.
 
 
 

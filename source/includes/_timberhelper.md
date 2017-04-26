@@ -57,15 +57,17 @@ $error | mixed |
 
 
 
-## function_wrapper
+## <strike>function_wrapper</strike>
+**DEPRECATED** since 1.3.0
+
 `function_wrapper( mixed $function_name, array $defaults=array(), bool $return_output_buffer=false )`
 
-**returns:** `\Timber\Timber\FunctionWrapper/mixed` 
+**returns:** `\Timber\FunctionWrapper/mixed` 
 
 Name | Type | Description
 ---- | ---- | -----------
-$function_name | mixed | or array( $class( string|object ), $function_name )
-$defaults | array | 
+$function_name | mixed |        String or array( $class( string|object ), $function_name ).
+$defaults | array |             Optional.
 $return_output_buffer | bool | 
 
 

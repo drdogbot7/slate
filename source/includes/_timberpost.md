@@ -142,7 +142,7 @@ $childPostClass | bool/string/bool | _optional_ a custom post class (ex: 'MyTimb
 ```twig
 	{% if post.children %}
 	    Here are the child pages:
-	    {% for child in page.children %}
+	    {% for child in post.children %}
 	        <a href="{{ child.link }}">{{ child.title }}</a>
 	    {% endfor %}
 	{% endif %}
