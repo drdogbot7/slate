@@ -42,7 +42,6 @@ class | string | $class stores the CSS classes for the post (ex: "post post-type
 [content](#content) | string | 
 [date](#date) | string | 
 [format](#format) | mixed | 
-[get_preview](#get_preview) | string | of the post preview
 id | string | $id the numeric WordPress id of a post
 [link](#link) | string | ex: http://example.org/2015/07/my-awesome-post
 [next](#next) | mixed | 
@@ -209,7 +208,7 @@ $len | mixed |
 ```
 
 ## convert
-`convert( array $data, string $class )`
+`convert( array/\Timber\WP_Post $data, string $class )`
 
 **returns:** `void` 
 
@@ -217,7 +216,7 @@ Finds any WP_Post objects and converts them to Timber\Posts
 
 Name | Type | Description
 ---- | ---- | -----------
-$data | array | 
+$data | array/\Timber\WP_Post | 
 $class | string | 
 
 
@@ -344,7 +343,9 @@ Returns the post_type object with labels and other info
 	This post is from <span>Recipes</span>
 ```
 
-## get_preview
+## <strike>get_preview</strike>
+**DEPRECATED** since 1.3.1, use {{ post.preview }} instead
+
 `get_preview( mixed/int $len=50, bool $force=false, string $readmore="Read More", bool/bool/string $strip=true, string $end="&hellip;" )`
 
 **returns:** `string` of the post preview

@@ -264,15 +264,6 @@ Deletes all resized versions of an image when the source is deleted or its meta 
 
 
 
-## add_constants
-`add_constants( )`
-
-**returns:** `void` 
-
-Adds a constant defining the path to the content directory relative to the site for example /wp-content or /content
-
-
-
 ## is_in_theme_dir
 `is_in_theme_dir( mixed $path )`
 

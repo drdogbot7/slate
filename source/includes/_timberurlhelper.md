@@ -18,6 +18,15 @@ $fs | string |
 
 
 
+## get_content_subdir
+`get_content_subdir( )`
+
+**returns:** `string` (ex: /wp-content or /content)
+
+Get the path to the content directory relative to the site. This replaces the WP_CONTENT_SUBDIR constant
+
+
+
 ## get_current_url
 `get_current_url( )`
 
@@ -200,6 +209,20 @@ Pass links through untrailingslashit unless they are a single /
 Name | Type | Description
 ---- | ---- | -----------
 $link | mixed | 
+
+
+
+## starts_with
+`starts_with( mixed $haystack, mixed $starts_with )`
+
+**returns:** `boolean` 
+
+Check to see if the URL begins with the string in question Because it's a URL we don't care about protocol (HTTP vs HTTPS) Or case (so it's cAsE iNsEnSeTiVe)
+
+Name | Type | Description
+---- | ---- | -----------
+$haystack | mixed | 
+$starts_with | mixed | 
 
 
 

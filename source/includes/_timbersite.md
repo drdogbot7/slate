@@ -26,7 +26,6 @@ charset | string |
 description | string | 
 id | int | the ID of a site in multisite
 language | string | the language setting ex: en-US
-language_attributes | string | of language attributes for usage in the <html> tag
 [link](#link) | string | 
 multisite | bool | true if multisite, false if plain ole' WordPress
 name | string | 
@@ -71,6 +70,15 @@ $field | mixed |
 `icon( )`
 
 **returns:** `void` 
+
+
+
+## language_attributes
+`language_attributes( )`
+
+**returns:** `string` 
+
+Returns the language attributes that you're looking for
 
 
 
