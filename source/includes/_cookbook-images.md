@@ -40,6 +40,19 @@ The first parameter is `width` the second is `height` (but it's optional) so if 
 <img src="{{post.thumbnail.src|resize(640)}}" />
 ```
 
+If you want to scale proportionally to a particular height, you can set the `width` to '0'.
+
+```twig
+<img src="{{post.thumbnail.src|resize(0, 640)}}" />
+```
+
+If you want to scale an image proportionally to fit within a particular `height` and `width` but without cropping or letterboxing, it's a little more complicated but still easily done.
+
+```twig
+{# fit within 640 x 480px without cropping or letterboxing #}
+<img src="{{post.thumbnail.height > post.thumbnail.width ? post.thumbnail.src|resize(0, 480) : post.thumbnail.src|resize(640)}}" />
+```
+
 All of these filters are written specifically to interact with WordPress's image API. (So don't worry, no weird TimThumb stuff going on—this is all using WP's internal image sizing stuff).
 
 #### Letterboxing Images
